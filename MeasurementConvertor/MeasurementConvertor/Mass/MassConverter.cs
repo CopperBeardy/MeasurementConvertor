@@ -3,7 +3,7 @@
 /// <summary>
 /// Mass convertion calculator
 /// </summary>
-public static  class Convertor
+public static  class MassConverter
 {
 	/// <summary>
 	///	Manages the conversion of from the initial MassUnit to the required MassUnit
@@ -14,10 +14,10 @@ public static  class Convertor
 	/// <returns type="double">The amount of the required MassUnit as double</returns>
 	public static double Convert(double quantity, MassUnit inputUnit, MassUnit outputUnit)
 	{
-		if(outputUnit == MassUnit.g)
+		if(inputUnit == MassUnit.g && outputUnit == MassUnit.g)
 			return quantity;
-
-		return FromBaseMeasure(ToBaseMeasure(quantity, inputUnit), outputUnit);
+		var baseUnitAmount = ToBaseMeasure(quantity, inputUnit);
+		return outputUnit ==	MassUnit.g ? baseUnitAmount : FromBaseMeasure(baseUnitAmount, outputUnit);
 	}
 
 	/// <summary>
@@ -27,14 +27,14 @@ public static  class Convertor
 	/// <param name="inputUnit">Type of input MassUnit</param>
 	/// <returns type="double">weight in grams</returns>
 	/// <exception cref="NotSupportedException"></exception>
-	private static double ToBaseMeasure(double quantity,MassUnit inputUnit) =>
+	 public static double ToBaseMeasure(double quantity,MassUnit inputUnit) =>
 		 inputUnit switch
 		{
-			MassUnit.kg => quantity * 0.001,
+			MassUnit.kg => quantity * 1000,
 			MassUnit.lb => quantity * 453.59237,
 			MassUnit.oz => quantity * 28.3495231,
 			MassUnit.st => quantity * 6350.29317,
-			MassUnit.mg => quantity * 1000,
+			MassUnit.mg => quantity * 0.001,
 			_ => throw new NotSupportedException()
 		};
 
@@ -45,14 +45,14 @@ public static  class Convertor
 	/// <param name="outputUnit">Required MassUnit type</param>
 	/// <returns type="double" >Amount in requested MassUnit type</returns>
 	/// <exception cref="NotSupportedException"></exception>
-	private static double FromBaseMeasure(double quantity, MassUnit outputUnit) =>
+	 public static double FromBaseMeasure(double quantity, MassUnit outputUnit) =>
 		outputUnit switch
 		{
-			MassUnit.kg => quantity * 1000,
+			MassUnit.kg => quantity * 0.001,
 			MassUnit.lb => quantity * 0.00220462,
 			MassUnit.oz =>quantity * 0.03527396,
 			MassUnit.st => quantity * 0.00015747,
-			MassUnit.mg => quantity * 0.001,
+			MassUnit.mg => quantity * 1000,
 			_ => throw new NotSupportedException()
 		};
 }

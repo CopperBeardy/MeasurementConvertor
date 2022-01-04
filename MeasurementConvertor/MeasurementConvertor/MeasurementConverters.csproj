@@ -8,10 +8,18 @@
     <RepositoryUrl>https://github.com/CopperBeardy/MeasurementConvertor</RepositoryUrl>
     <PackageTags>conversion;Mass;Volume</PackageTags>
     <PackageId>Measurement_Convertors_CSharp</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Davin Davies</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <SignAssembly>False</SignAssembly>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

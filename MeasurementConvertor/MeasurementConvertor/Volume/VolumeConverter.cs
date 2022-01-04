@@ -3,7 +3,7 @@
 /// <summary>
 /// Volume Convertion calculator
 /// </summary>
-public static class Convertor
+public static class VolumeConverter
 {
 	/// <summary>
 	///	Manages the conversion of from the initial VolumeUnit to the required VolumeUnit
@@ -16,8 +16,9 @@ public static class Convertor
 	{
 		if (outputUnit == VolumeUnit.l)
 			return quantity;
+		var baseUnitAmout = ToBaseMeasure(quantity, inputUnit);
 
-		return FromBaseMeasure(ToBaseMeasure(quantity, inputUnit), outputUnit);
+		return outputUnit == VolumeUnit.l ? baseUnitAmout : FromBaseMeasure(baseUnitAmout, outputUnit);
 	}
 
 	/// <summary>
@@ -27,7 +28,7 @@ public static class Convertor
 	/// <param name="inputUnit">Type of input VolumeUnit</param>
 	/// <returns type="double">volume in Litre's</returns>
 	/// <exception cref="NotSupportedException"></exception>
-	private static double ToBaseMeasure(double quantity, VolumeUnit inputUnit) =>
+	public static double ToBaseMeasure(double quantity, VolumeUnit inputUnit) =>
 		inputUnit switch
 		{
 			VolumeUnit.floz => quantity * 0.02841308,
@@ -43,7 +44,7 @@ public static class Convertor
 	/// <param name="outputUnit">Type of requested VolumeUnit</param>
 	/// <returns type="double" >Amount in Litre's</returns>
 	/// <exception cref="NotSupportedException"></exception>
-	private static double FromBaseMeasure(double quantity, VolumeUnit outputUnit) =>
+	public static double FromBaseMeasure(double quantity, VolumeUnit outputUnit) =>
 		outputUnit switch
 		{
 			VolumeUnit.floz => quantity * 35.1950642,
