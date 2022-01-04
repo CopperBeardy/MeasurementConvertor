@@ -4,11 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Description>Measurement Convertor for converting a measurement unit to different unit</Description>
+    <Description>Measurement Converter for converting a measurement unit to different unit</Description>
     <RepositoryUrl>https://github.com/CopperBeardy/MeasurementConvertor</RepositoryUrl>
-    <PackageTags>conversion;Mass;Volume</PackageTags>
-    <PackageId>Measurement_Convertors_CSharp</PackageId>
-    <Version>0.0.3</Version>
+    <PackageTags>conversion;Mass;Volume;csharp;C#</PackageTags>
+    <PackageId>Measurement.Convertors.CSharp</PackageId>
+    <Version>0.0.1</Version>
     <Authors>Davin Davies</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <SignAssembly>False</SignAssembly>
