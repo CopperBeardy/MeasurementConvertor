@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿.net 6  C#
+=======
+.net 6  C#
+>>>>>>> main
 
 ### Features
 
