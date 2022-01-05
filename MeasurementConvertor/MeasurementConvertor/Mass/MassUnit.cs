@@ -1,4 +1,4 @@
-﻿namespace MeasurementConvertor.Mass;
+﻿namespace MeasurementConverters.Mass;
 
 public enum MassUnit
 {
@@ -8,5 +8,11 @@ public enum MassUnit
 	oz,
 	st,
 	mg,
-
+	dg,
+	cg,
+	μg,
+	dag,
+	hg,
+	Mg,
+	t
 }

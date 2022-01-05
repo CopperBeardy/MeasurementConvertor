@@ -1,4 +1,4 @@
-﻿namespace MeasurementConvertor.Volume;
+﻿namespace MeasurementConverters.Volume;
 
 /// <summary>
 /// Volume Convertion calculator
@@ -14,11 +14,11 @@ public static class VolumeConverter
 	/// <returns type="double">The amount of the required VolumeUnit as double</returns>
 	public static double Convert(double quantity, VolumeUnit inputUnit, VolumeUnit outputUnit)
 	{
-		if (outputUnit == VolumeUnit.l)
+		if (outputUnit == VolumeUnit.L)
 			return quantity;
 		var baseUnitAmout = ToBaseMeasure(quantity, inputUnit);
 
-		return outputUnit == VolumeUnit.l ? baseUnitAmout : FromBaseMeasure(baseUnitAmout, outputUnit);
+		return outputUnit == VolumeUnit.L ? baseUnitAmout : FromBaseMeasure(baseUnitAmout, outputUnit);
 	}
 
 	/// <summary>
@@ -32,9 +32,18 @@ public static class VolumeConverter
 		inputUnit switch
 		{
 			VolumeUnit.floz => quantity * 0.02841308,
-			VolumeUnit.ml => quantity * 0.001,
+			VolumeUnit.mL => quantity * 0.001,
 			VolumeUnit.pt_i => quantity * 0.5682615,
-		  _ => throw new NotSupportedException()
+			VolumeUnit.μL => quantity * 0.000001,
+			VolumeUnit.cL => quantity * 0.01,
+			VolumeUnit.daL => quantity * 10,
+			VolumeUnit.dL => quantity * 0.1,
+			VolumeUnit.hL => quantity * 100,
+			VolumeUnit.kL => quantity * 1000,
+			VolumeUnit.ML => quantity * 1000000,
+			VolumeUnit.gal_i => quantity * 4.546092,
+
+			_ => throw new NotSupportedException()
 		};
 
 	/// <summary>
@@ -47,10 +56,18 @@ public static class VolumeConverter
 	public static double FromBaseMeasure(double quantity, VolumeUnit outputUnit) =>
 		outputUnit switch
 		{
-			VolumeUnit.floz => quantity * 35.1950642,
-		   VolumeUnit.ml => quantity * 1000,
-		   VolumeUnit.pt_i => quantity * 1.75975321 ,
-		 _ => throw new NotSupportedException()
+			VolumeUnit.floz => quantity / 0.02841308,
+			VolumeUnit.mL => quantity / 0.001,
+			VolumeUnit.pt_i => quantity / 0.5682615,
+			VolumeUnit.μL => quantity / 0.000001,
+			VolumeUnit.cL => quantity / 0.01,
+			VolumeUnit.daL => quantity / 10,
+			VolumeUnit.dL => quantity / 0.1,
+			VolumeUnit.hL => quantity / 100,
+			VolumeUnit.kL => quantity / 1000,
+			VolumeUnit.ML => quantity / 1000000,
+			VolumeUnit.gal_i => quantity / 4.546092,
+			_ => throw new NotSupportedException()
 		};
 
 
