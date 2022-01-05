@@ -6,13 +6,14 @@
     <Nullable>enable</Nullable>
     <Description>Measurement Converter for converting a measurement unit to different unit</Description>
     <RepositoryUrl>https://github.com/CopperBeardy/MeasurementConvertor</RepositoryUrl>
-    <PackageTags>conversion;Mass;Volume;csharp;C#</PackageTags>
+    <PackageTags>conversion;Mass;Volume;Energy;Speed;Length;csharp;C#</PackageTags>
     <PackageId>Measurement.Converters.CSharp</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Davin Davies</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <SignAssembly>False</SignAssembly>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Added converters for speed, Energy, Legnth and added additonal units to Mass and Volume</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
