@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿.net 6  C#
-=======
 .net 6  C#
->>>>>>> main
+
 
 ### Features
 
@@ -11,7 +8,7 @@
 - length converter for -> 	cm, m, inch, yard, ft, km, dm, mm, μ, mi, NM
 - speed converter for -> 	mph, kph, fps, mps, knot, mach
 - energy converter for -> J,	kJ, cal, kcal, kW, BTU, eV 
-
+- temperature for -> C, F, K, R
 
 # Example of usage
 all converters follow the same pattern
