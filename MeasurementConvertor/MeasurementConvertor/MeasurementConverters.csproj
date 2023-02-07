@@ -8,15 +8,18 @@
     <RepositoryUrl>https://github.com/CopperBeardy/MeasurementConvertor</RepositoryUrl>
     <PackageTags>conversion;Mass;Volume;Energy;Speed;Length;csharp;C#</PackageTags>
     <PackageId>Measurement.Converters.CSharp</PackageId>
-    <Version>0.0.34</Version>
+    <Version>0.0.35</Version>
     <Authors>Davin Davies</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <SignAssembly>False</SignAssembly>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>Added converters for speed, Energy, Length and included additonal  MassUnits  and VolumeUnits</PackageReleaseNotes>
     <Product>Measurement Converters</Product>
+    <Title>Measurement Convertors</Title>
   </PropertyGroup>
-
+	<PropertyGroup>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
   <ItemGroup>
     <None Include="..\..\README.md">
       <Pack>True</Pack>

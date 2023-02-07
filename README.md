@@ -1,8 +1,5 @@
 .net 7  C#
-
-
 ### Features
-
 - mass converter for -> g, kg, lb, oz, st, mg, dg, cg, μg, dag, hg, Mg, t,
 - volume converter  for-> 	mL, L, floz, μL, cL, daL,	dL, hL, kL, ML,	gal_i, pt_i(Imperial)
 - length converter for -> 	cm, m, inch, yard, ft, km, dm, mm, μ, mi, NM
