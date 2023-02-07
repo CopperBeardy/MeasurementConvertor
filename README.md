@@ -1,4 +1,4 @@
-.net 6  C#
+.net 7  C#
 
 
 ### Features
